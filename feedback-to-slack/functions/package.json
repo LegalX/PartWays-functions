@@ -1,0 +1,12 @@
+{
+  "name": "feedback-to-slack",
+  "description": "Sends user feedback from PartWays app to PartWays Slack channel",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "firebase-admin": "^4.1.4",
+    "firebase-functions": "^0.5.4",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  },
+  "private": true
+}
