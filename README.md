@@ -11,3 +11,6 @@ To create new function:
 
 To deploy function:
 `firebase deploy --only functions`
+
+[Environment Configuration](https://firebase.google.com/docs/functions/config-env)
+`firebase functions:config:set someservice.key="THE API KEY" someservice.id="THE CLIENT ID"`
