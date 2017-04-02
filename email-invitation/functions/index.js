@@ -4,10 +4,7 @@ const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
 // Configure the email transport using the default SMTP transport and a GMail account.
 // For other types of transports such as Sendgrid see https://nodemailer.com/transports/
-// TODO: Configure the `gmail.email` and `gmail.password` Google Cloud environment variables.
-const gmailEmail = 'partways.dev@gmail.com'; // encodeURIComponent(functions.config().gmail.email);
-const gmailPassword = '42UXz8QXOzi5'; // encodeURIComponent(functions.config().gmail.password);
-const mailTransport = nodemailer.createTransport(`smtps://${gmailEmail}:${gmailPassword}@smtp.gmail.com`);
+const mailTransport = nodemailer.createTransport(`smtps://${encodeURIComponent(functions.config().gmail.email)}:${encodeURIComponent(functions.config().gmail.password)}@smtp.gmail.com`);
 
 // Sends an email confirmation when a user changes his mailing list subscription.
 exports.sendEmailConfirmation = functions.database.ref('/users/{uid}').onWrite(event => {
